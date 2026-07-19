@@ -1,0 +1,79 @@
+import { FastifyInstance } from "fastify";
+import { DockerController } from "../../../controllers/docker.controller.js";
+
+export async function dockerRoute(app: FastifyInstance) {
+    app.get(
+        "/docker",
+        DockerController.getContainers
+    );
+    app.get(
+        "/docker/stats",
+        DockerController.getStats
+    );
+    app.get(
+        "/docker/events",
+        DockerController.getEvents
+    )
+    app.get(
+        "/docker/images",
+        DockerController.getImages
+    );
+    app.get(
+        "/docker/images/:id",
+        DockerController.getImage
+    );
+    app.delete(
+        "/docker/images/:id",
+        DockerController.deleteImage
+    );
+    app.post(
+        "/docker/images/:id",
+        DockerController.pullImage
+    );
+    app.get(
+        "/docker/volumes",
+        DockerController.getVolumes
+    )
+    app.get(
+        "/docker/volumes/:name",
+        DockerController.getVolume
+    )
+    app.delete(
+        "/docker/volumes/:name",
+        DockerController.deleteVolume
+    )
+    app.get(
+        "/docker/:id/logs",
+        DockerController.getContainerLogs
+    );
+    app.get(
+        "/docker/:id",
+        DockerController.getContainer
+    );
+    app.post(
+        "/docker/:id/start",
+        DockerController.startContainer
+    );
+    app.post(
+        "/docker/:id/stop",
+        DockerController.stopContainer
+    );
+    app.post(
+        "/docker/:id/restart",
+        DockerController.restartContainer
+    );
+    app.get(
+        "/docker/networks",
+        DockerController.getNetworks
+    );
+
+    app.get(
+        "/docker/networks/:id",
+        DockerController.getNetwork
+    );
+
+    app.delete(
+        "/docker/networks/:id",
+        DockerController.deleteNetwork
+    );
+}
