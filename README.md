@@ -1,4 +1,4 @@
-# DevMon
+# Irfandi Server Monitoring
 
 A modern Docker management and server monitoring dashboard built with React, Fastify, and Docker.
 
@@ -75,7 +75,7 @@ A modern Docker management and server monitoring dashboard built with React, Fas
 ## 📁 Project Structure
 
 ```
-devmon/
+Irfandi-Server-Monitoring-main/
 │
 ├── frontend/
 │
@@ -93,7 +93,7 @@ devmon/
 ### Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/devmon.git
+git clone https://github.com/DiazIrfandi/Irfandi-Server-Monitoring.git
 ```
 
 ### Frontend
